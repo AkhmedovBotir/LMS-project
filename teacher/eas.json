@@ -1,0 +1,35 @@
+{
+  "cli": {
+    "version": ">= 5.9.1",
+    "appVersionSource": "remote",
+    "requireCommit": false
+  },
+  "build": {
+    "development": {
+      "developmentClient": true,
+      "distribution": "internal",
+      "android": {
+        "gradleCommand": ":app:assembleDebug"
+      }
+    },
+    "preview": {
+      "distribution": "internal",
+      "android": {
+        "buildType": "apk"
+      }
+    },
+    "production": {
+      "android": {
+        "buildType": "apk",
+        "image": "ubuntu-18.04-jdk-11-ndk-r19c"
+      },
+      "env": {
+        "EXPO_NO_DOTENV": "1"
+      }
+    }
+  },
+  "submit": {
+    "production": {}
+  }
+}
+ 
